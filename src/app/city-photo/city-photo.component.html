@@ -1,0 +1,37 @@
+<section class="wrapper">
+  <div class="container-fostrap">
+    <div>
+      <img src="https://cdn.resmim.net/2021/12/30/gejL.png" class="fostrap-logo w-25"/>
+    </div>
+    <div class="mb-3">
+      <input class="form-control" id="productName" placeholder="Ne Aramıştınız..."
+             [(ngModel)]="filterText">
+      <div  class="form-text" *ngIf="filterText">
+        Şu an  <strong>{{filterText}}</strong> aradınız
+      </div>
+    </div>
+    <div class="content">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-4" *ngFor="let item of photoList | cityfilter:filterText ">
+            <div class="card" >
+              <a class="img-card" href="#">
+                <img src="{{item.photoUrl}}" alt="">
+              </a>
+              <div class="card-content">
+                <h4 class="card-title">
+                  {{item.title}}
+                </h4>
+                <p class="">
+                  {{item.description}}
+                   </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-4">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

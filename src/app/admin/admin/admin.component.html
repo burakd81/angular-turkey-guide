@@ -1,0 +1,44 @@
+  <div class="container">
+  <div class="pt-5">
+    <div class="card">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-6">
+            <h3>Tüm Fotoğraflar</h3>
+          </div>
+          <div class="col-6 text-end">
+            <button class="btn btn-primary" (click)="createPhotoRequest()">Fotoğraf Paylaş</button>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Şehir İsmi</th>
+            <th scope="col">Fotoğraf URL</th>
+            <th scope="col">Açıklama</th>
+            <th scope="col">İşlem</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let item of photoList; index as ind">
+            <th scope="row">{{ind + 1}}</th>
+            <td>{{item.title}}</td>
+            <td>{{item.photoUrl}}</td>
+            <td>{{item.description}}</td>
+            <td>
+              <button class="btn btn-primary me-1" (click)="editPhotoRequest(item)">Düzenle</button>
+              <button class="btn btn-danger" (click)="deletePhoto(item, ind)">Sil</button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<app-photo [photo]="selectedPhoto" (save)="savePhotoWatcher($event)"></app-photo>

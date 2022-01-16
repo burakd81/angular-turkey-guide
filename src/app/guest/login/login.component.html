@@ -1,0 +1,27 @@
+<div class="overlay arka">
+  <form #f="ngForm" (ngSubmit)="f.form.valid && login()">
+    <div class="con">
+      <header class="head-form">
+        <h2>Giriş Yap</h2>
+      </header>
+      <br>
+      <div class="field-set">
+        <span class="input-item">
+           <i class="fa fa-user-circle"></i>
+         </span>
+        <input type="text" class="form-control"  id="txt-input" name="ysername"   placeholder="Kullanıcı Adı" [(ngModel)]="user.username" required>
+        <br>
+        <span class="input-item">
+        <i class="fa fa-key"></i>
+       </span>
+        <input class="form-control" type="password" placeholder="Şifre" id="pwd"  name="password" [(ngModel)]="user.password" required>
+        <br>
+        <button type="submit"  class="log-in" > Giriş Yap </button>
+      </div>
+      <div class="other">
+        <a routerLink="/register">
+          Hala üye olmadınız mı? Hemen üye olun</a>
+      </div>
+    </div>
+  </form>
+</div>

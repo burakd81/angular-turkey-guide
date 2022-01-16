@@ -1,0 +1,34 @@
+<div class="modal fade" id="photoModal" tabIndex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form #f="ngForm" (ngSubmit)="f.form.valid && savePhoto()">
+        <div class="modal-header">
+          <h5 class="modal-title">Fotoğraf Detayları</h5>
+          <button class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="title">Yer İsmi</label>
+            <input type="text" id="title" name="title" class="form-control" [(ngModel)]="photo.title" required
+            />
+          </div>
+          <div class="form-group">
+            <label for="author">Fotoğraf URL</label>
+            <input type="text" id="author" name="author" class="form-control" [(ngModel)]="photo.photoUrl" required
+            />
+          </div>
+          <div class="form-group">
+            <label for="description">Açıklama</label>
+            <textarea id="description" name="textarea" class="form-control" [(ngModel)]="photo.description" required
+            ></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+          <button class="btn btn-primary" type="submit">Kaydet</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
